@@ -115,7 +115,7 @@
           <li><a href="#testimonials">Testimonials</a></li>
 			-->
           <li><a href="#contact">Contato</a></li>
-          <li><a href=>Área Cliente</a></li>
+          <li><a href="https://iwbarecebiveis.wba.com.br/iwba/pages/index.jsf" target="_blank">Área Cliente</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
@@ -271,7 +271,7 @@
         <div class="col-md-3">
           <a class="portfolio-item" style="background-image: url(img/portfolio-1.jpg);">
             <div class="details">
-              <h4>FR Collect</h4>
+              <h4></h4>
             </div>
           </a>
         </div>
@@ -279,7 +279,7 @@
         <div class="col-md-3">
           <a class="portfolio-item" style="background-image: url(img/portfolio-2.jpg);">
             <div class="details">
-              <h4>CBC more</h4>
+              <h4></h4>
             </div>
           </a>
         </div>
@@ -287,7 +287,7 @@
         <div class="col-md-3">
           <a class="portfolio-item" style="background-image: url(img/portfolio-3.jpg);">
             <div class="details">
-              <h4>AUDIFACTOR</h4>
+              <h4></h4>
             </div>
           </a>
         </div>
@@ -295,7 +295,7 @@
         <div class="col-md-3">
           <a class="portfolio-item" style="background-image: url(img/portfolio-4.jpg);">
             <div class="details">
-              <h4>LISpbx</h4>
+              <h4></h4>
             </div>
           </a>
         </div>
@@ -303,7 +303,7 @@
         <div class="col-md-3">
           <a class="portfolio-item" style="background-image: url(img/portfolio-5.jpg);">
             <div class="details">
-              <h4>Serasa Experian</h4>
+              <h4></h4>
             </div>
           </a>
         </div>
@@ -311,7 +311,7 @@
         <div class="col-md-3">
           <a class="portfolio-item" style="background-image: url(img/portfolio-6.jpg);">
             <div class="details">
-              <h4>WBA software</h4>
+              <h4></h4>
             </div>
           </a>
         </div>
@@ -319,7 +319,7 @@
         <div class="col-md-3">
           <a class="portfolio-item" style="background-image: url(img/portfolio-7.jpg);">
             <div class="details">
-              <h4>CRDC</h4>
+              <h4></h4>
             </div>
           </a>
         </div>
@@ -327,8 +327,8 @@
         <div class="col-md-3">
           <a class="portfolio-item" style="background-image: url(img/portfolio-8.jpg);">
             <div class="details">
-              <h4>Banco Santander</h4>
-              <span>Banco cobrador</span>
+              <h4></h4>
+              <span style="margin-top:100px;">Banco cobrador</span>
             </div>
           </a>
         </div>
@@ -449,6 +449,10 @@
               </div>
               <div class="text-center"><button type="button" id="buttonSendEmail" onclick="sendEmail(); returnfalse">Enviar Mensagem</button></div>
             </form>
+           
+            <div class="alert alert-success" role="alert" id="alertEmail" hidden>
+              <strong>E-mail enviado com sucesso!</strong><br/> Entraremos em contato em breve. Obrigado.
+            </div>
           </div>
         </div>
 
@@ -526,7 +530,7 @@
 <script>
   function sendEmail() {
     debugger
-    
+
     if ($("#email").val() != "" && $("#message").val() != "" && $("#subject").val() != "") {
       //emailjs.send("gmail", "template_wyCn1o0c", { name: "James", notes: "Check this out!" });
       var service_id = 'gmail';
@@ -539,6 +543,19 @@
 
       emailjs.send(service_id, template_id, template_params);
 
+      $("#alertEmail").fadeIn();
+
+      $("#subject").val("");
+      $("#email").val("");
+      $("#message").val("");
+
+      window.setTimeout(function () {
+        hidenPopUp();
+      }, 6000);
+    }
+
+    function hidenPopUp(){
+       $("#alertEmail").hide();
     }
   }
 

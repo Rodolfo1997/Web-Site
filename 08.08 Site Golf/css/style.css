@@ -619,7 +619,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #portfolio .portfolio-item .details {
   height: 260px;
-  background: rgba(255, 153, 51, 0.55);
+  background: rgba(255, 153, 51, 0);
   display: table-cell;
   vertical-align: middle;
   opacity: 0;
@@ -873,4 +873,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center;
   font-size: 13px;
   color: #ccc;
+}
+
+#alertEmail{
+  text-align: center;
+  margin-top: 20px;
 }
